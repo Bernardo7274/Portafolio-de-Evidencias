@@ -1,0 +1,264 @@
+bandit level 0 -> 1:
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+bandit0
+------------------------------------------------------------------------------------------------------
+bandit level 1 -> 2:
+ls
+cat readme 
+------------------------------------------------------------------------------------------------------
+bandit level 2 -> 3:
+ls
+cat ./-
+------------------------------------------------------------------------------------------------------
+bandit level 3 -> 4:
+cat spaces in this filename
+cat "spaces in this filename"
+------------------------------------------------------------------------------------------------------
+bandit level 4 -> 5:
+cd inhere
+ls -a
+cat .hidden
+------------------------------------------------------------------------------------------------------
+bandit level 5 -> 6:
+cd inhere
+ls -la
+file ./*
+cat ./-file07
+------------------------------------------------------------------------------------------------------
+bandit level 6 -> 7:
+ls
+cd inhere
+ls -la
+ls -la maybehere00
+file */{.,}* | grep "ASCII text" | grep -v ', with very long lines'
+du -b -a | grep 1033
+cat ./maybehere07/.file2
+file ./maybehere07/.file2
+find . -type f -size 1033c ! -executable -exec file '{}' \; | grep ASCII
+------------------------------------------------------------------------------------------------------
+bandit level 7 -> 8:
+find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
+cat /var/lib/dpkg/info/bandit7.password
+------------------------------------------------------------------------------------------------------
+bandit level 8 -> 9:
+du -b data.txt
+cat data.txt | grep millionth
+------------------------------------------------------------------------------------------------------
+bandit level 9 -> 10:
+sort data.txt | uniq -u
+------------------------------------------------------------------------------------------------------
+bandit level 10 -> 11:
+strings data.txt | grep ===
+------------------------------------------------------------------------------------------------------
+bandit level 11 -> 12:
+cat data.txt
+base64 -d data.txt
+------------------------------------------------------------------------------------------------------
+bandit level 12 -> 13:
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+------------------------------------------------------------------------------------------------------
+bandit level 13 -> 14:
+cd /tmp
+mktemp -d
+cd /tmp/tmp.qrMWdAzoKC
+cp ~/data.txt .
+ls
+mv data.txt hexdump_data
+ls
+cat hexdump_data | head
+xxd -r hexdump_data compressed_data
+ls
+cat compressed_data | head
+cat hexdump_data 
+mv compressed_data compressed_data.gz
+ls
+gzip -d compressed_data.gz 
+ls
+xxd compressed_data 
+mv compressed_data compressed_data.bz2
+ls
+bzip2 -d compressed_data.bz2
+mv compressed_data compressed_data.gz
+gzip -d compressed_data.gz
+cat compressed_data 
+mv compressed_data compressed_data.tar
+tar -xf compressed_data.tar 
+ls
+tar -xf data5.bin
+xxd data6.bin
+bzip2 -d data6.bin
+ls
+tar -xf data6.bin.out
+ls
+xxd data8.bin
+mv data8.bin data8.gz
+gzip -d data8.gz
+ls
+cat data8
+------------------------------------------------------------------------------------------------------
+bandit level 14 -> 15:
+ls
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+------------------------------------------------------------------------------------------------------
+bandit level 15 -> 16:
+cat /etc/bandit_pass/bandit14
+nc localhost 30000
+------------------------------------------------------------------------------------------------------
+bandit level 16 -> 17:
+openssl s_client -connect localhost:30001
+------------------------------------------------------------------------------------------------------
+bandit level 17 -> 18:
+nmap localhost -p 31000-32000
+ncat --ssl localhost 31790
+vim key
+ssh -i key bandit17@bandit.labs.overthewire.org -p 2220
+------------------------------------------------------------------------------------------------------
+bandit level 18 -> 19:
+man diff
+diff passwords.old passwords.new
+------------------------------------------------------------------------------------------------------
+bandit level 19 -> 20:
+ssh bandit18@bandit.labs.overthewire.org -p 2220 /bin/bash
+ls
+cat readme
+------------------------------------------------------------------------------------------------------
+bandit level 20 -> 21:
+ls
+./bandit20-do id
+./bandit20-do ls
+./bandit20-do cat /etc/bandit_pass/bandit20
+------------------------------------------------------------------------------------------------------
+bandit level 21 -> 22:
+echo -n 'aqui va la contraseña' | nc -l -p 1234 & [1] 24661
+./suconnect 1234
+------------------------------------------------------------------------------------------------------
+bandit level 22 -> 23:
+ls -la /etc/cron.d
+cat /etc/cron.d/cronjob_bandit22
+cat /usr/bin/cronjob_bandit22.sh
+cat /tmp/t706lds9S0RqQh9aMcZ6ShpAoZKF7fgv
+------------------------------------------------------------------------------------------------------
+bandit level 23 -> 24:
+ls -la /etc/cron.d
+cat /etc/cron.d/cronjob_bandit23
+cat /usr/bin/cronjob_bandit23.sh
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+------------------------------------------------------------------------------------------------------
+bandit level 24 -> 25:
+cd /etc/cron.d 
+ls
+cat cronjob_bandit24 
+cat /usr/bin/cronjob_bandit24.sh  
+cd /tmp
+mkdir hola123
+sudo nano como.sh
+chmod 777 como.sh 
+touch password.txt
+chmod 777 password.txt
+cp como.sh /var/spool/bandit24/foo
+cat password.txt
+------------------------------------------------------------------------------------------------------
+bandit level 25 -> 26:
+nc localhost 30002
+python3
+mkdir /tmp/bandit123
+cd /tmp/bandit123
+nano ban.sh
+cd .. 
+mkdir new_directory_name
+cd new_directory_name
+nano bandit123.sh
+chmod 777 bandit123.sh
+./bandit123.sh
+------------------------------------------------------------------------------------------------------bandit level 26 -> 27:
+ls
+ssh -t -i bandit26.sshkey bandit26@localhost -p 2220 "/bin/bash"
+cat bandit26.sshkey
+more bandit26.sshkey
+more bandit26.sshkey
+vi
+cat /etc/bandit_pass/bandit26  
+ssh bandit25@bandit.labs.overthewire.org -p 2220
+cat /etc/passwd
+cat /usr/bin/showtext
+
+bandit level 27 -> 28:
+ls
+file bandit27-do
+./bandit27-do cat /etc/bandit_pass/bandit27 
+------------------------------------------------------------------------------------------------------
+bandit level 28 -> 29:
+cd /tmp/
+mkdir /hola123
+git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo
+ls
+cat README
+------------------------------------------------------------------------------------------------------
+bandit level 29 -> 30:
+mkdir /tmp/proye123
+cd /tmp/proye123
+git clone ssh://bandit28-git@localhost:2220/home/bandit28-git/repo
+ls
+cd repo
+ls
+cat README.md
+git branch -r
+git branch
+git tag
+git log 
+git checkout f08ee321c5f564b2da90789fac14b5ae2e55c51b
+cat README.md
+------------------------------------------------------------------------------------------------------
+bandit level 30 -> 31:
+mkdir /tmp/sistem123
+cd /tmp/sistem123
+git clone ssh://bandit29-git@localhost:2220/home/bandit29-git/repo
+cd repo 
+ls
+cat README.md
+git log
+git checkout 56176349778d7312c603002740f9c2bfc5a53c1
+cat README.md
+git branch
+git branch -r
+git checkout dev
+ls
+cat README.md
+------------------------------------------------------------------------------------------------------
+bandit level 31 -> 32:
+mkdir /tmp/operativo123
+cd /tmp/operativo123
+git clone ssh://bandit30-git@localhost:2220/home/bandit30-git/repo
+ls
+cd repo
+ls
+cat README.md
+git log
+git branch -r
+git tag
+git show secret
+------------------------------------------------------------------------------------------------------
+bandit level 32 -> 33:
+mkdir /tmp/hola123
+cd /tmp/hola123
+git clone ssh://bandit31-git@localhost:2220/home/bandit31-git/repoCloning into 'repo'...
+ls
+cd repo
+ls
+cat README.md
+ls -la
+cat .gitignore
+rm .gitignore
+echo "May I come in?" > key.txt
+git add .
+git commit -m "Added key.txt file")
+git push
+------------------------------------------------------------------------------------------------------
+bandit level 33 -> 34:
+$0
+ls
+$0
+export SHELL=/bin/bash
+$SHELL
+cat /etc/bandit_pass/bandit33
